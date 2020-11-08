@@ -25,10 +25,10 @@ const styles = {
   color: "#C0392B",
   fontSizeDescription: 1.2,
 };
-const styles2 = {
-  color: "grey",
-  fontSizeDescription: 1.3,
-};
+// const styles2 = {
+//   color: "grey",
+//   fontSizeDescription: 1.3,
+// };
 
 styles.fontSizeTitle = styles.fontSizeDescription * 1.2;
 

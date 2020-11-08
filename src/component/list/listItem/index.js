@@ -18,11 +18,11 @@ export default class ListItem extends Component {
     const { isOpen } = this.state;
     const { color } = style;
     const titleStyle = {
-      color: style.color,
+      color: color,
       fontSize: `${style.fontSizeTitle}em`,
     };
     const descriptionStyle = {
-      color: style.color,
+      color: color,
       fontSize: `${style.fontSizeDescription}em`,
     };
     return (
