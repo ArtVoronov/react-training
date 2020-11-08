@@ -21,15 +21,22 @@ const listMenu = [
   },
 ];
 
+const styles = {
+  color: "#C0392B",
+  fontSizeDescription: 1.2,
+};
+const styles2 = {
+  color: "grey",
+  fontSizeDescription: 1.3,
+};
+
+styles.fontSizeTitle = styles.fontSizeDescription * 1.2;
+
 function App() {
   return (
     <div className="App">
-      <h1>Lorem, ipsum dolor.</h1>
-      {listMenu.map((listItem, index) => {
-        return (
-          <List key={listItem.title + index} list={listItem} index={index} />
-        );
-      })}
+      <List list={listMenu} styles={styles} listName="Some title" />
+      {/* <List list={listMenu} styles={styles2} /> */}
     </div>
   );
 }

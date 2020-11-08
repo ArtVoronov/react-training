@@ -1,34 +1,31 @@
 import { Component } from "react";
+import PropTypes from "prop-types";
 import "./index.css";
+import ListItem from "./listItem";
 
 export default class List extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpened: false,
-    };
-  }
-
-  toggle = (event) => {
-    this.setState({ isOpened: !this.state.isOpened });
-  };
-
   render() {
-    const { title, description } = this.props.list;
-    const { isOpened } = this.state;
-    // console.log(this.state);
+    const { styles, list, listName } = this.props;
+    const { color } = styles;
     return (
-      <div className="itemContainer" onClick={this.toggle}>
-        <div className="itemtitleContainer">
-          <h2 className="itemTitle">{title}</h2>
-          {/* <input id={`checkbox${index}`} type="checkbox" defaultChecked />ы */}
-        </div>
-        <div className={`itemDescription ${isOpened ? "open" : ""}`}>
-          {description}
-        </div>
-        <hr />
+      <div className="listContainer">
+        <h1 className="listTitleContainer" style={{ color }}>
+          {listName}
+        </h1>
+        <ul>
+          {list.map((listItem, index) => (
+            <ListItem
+              key={listItem.description + String(index)}
+              item={listItem}
+              style={styles}
+            />
+          ))}
+        </ul>
       </div>
     );
   }
 }
+
+List.defaultProps = {
+  listName: "Lorem, ipsum dolor.",
+};
